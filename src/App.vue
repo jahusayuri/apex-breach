@@ -1,15 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <br/>
+  Test Vue 3 with Vite
+  <h1>Welcome to Your Vue.js App</h1>
+  <Button label="Click Me" class="p-button-raised p-button-success" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Button from 'primevue/button';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Button
   }
 }
 </script>
