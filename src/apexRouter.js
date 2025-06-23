@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import LandingPage from './page/landingPage.vue'
 
 const routes = [
-  { path: '/', component: '' },
+  { path: '/', component: LandingPage },
 ]
 
 const router = createRouter({

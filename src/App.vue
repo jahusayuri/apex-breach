@@ -1,15 +1,15 @@
 <template>
-  <AppHeader />
-  <router-vew />
+  <ApexHeader />
+  <router-view />
 </template>
 
 <script>
-import AppHeader from './components/custom/ApexHeader.vue';
+import ApexHeader from './components/custom/ApexHeader.vue';
 
 export default {
   name: 'App',
   components: {
-    AppHeader,
+    ApexHeader,
   }
 }
 </script>
