@@ -1,6 +1,6 @@
 <template>
   <ApexHeader />
-  <router-vew />
+  <router-view />
 </template>
 
 <script>
