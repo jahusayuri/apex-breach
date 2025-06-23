@@ -1,252 +1,250 @@
 <template>
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero2"
-            :style="{ backgroundImage: 'url(/media/evapcont/industries_hub_hero_def.jpg?width=1920&height=475&v=1db8e7d3c3b3150)' }">
-            <div class="container macro">
-                <div class="hero2-content">
-                    <div class="row">
-                        <div class="col-md-8 column">
-                            <h1 class="hero2-title">Industries</h1>
-                            <div class="hero2-sub-content">
-                                <p style="font-size: 22px;">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna
-                                    eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis
-                                    neque.
-                                </p>
-                            </div>
-                            <div class="hero2-buttons">
-                                <a class="btn btn-default left" href="#" title="Get A Quote">Start a Project</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 column hero2-lower">
-                        <div>
-                            <p><strong>Certifications</strong> ISO 9001:2015 | AS9100D | ITAR</p>
-                            <p>ISO 13485 certification available through Protolabs Network</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Title -->
-        <section>
-            <div class="container">
-                <h2 style="text-align: center;">Industries We Serve</h2>
-                <hr class="section-margin s" />
-                <div class="row">
-                    <div class="col-md-4 column">
-                        <IndustryCard title="Medical & Health Care" img="/media/34mcvhvv/medical_industry.jpg"
-                            link="/industries/medical/" />
-                        <IndustryCard title="Robotic Automation" img="/media/qqfl3qgd/robotics.jpg"
-                            link="/industries/robotics/" />
-                    </div>
-                    <div class="col-md-4 column">
-                        <IndustryCard title="Aerospace & Defense" img="/media/wdndewk5/aerospace.jpg"
-                            link="/industries/aerospace/" />
-                        <IndustryCard title="Consumer Electronics" img="/media/vurnp11l/electronics.jpg"
-                            link="/industries/consumer-electronics/" />
-                    </div>
-                    <div class="col-md-4 column">
-                        <IndustryCard title="Automotive & EV/AV" img="/media/skdfh1l0/automotive_industry.jpg"
-                            link="/industries/automotive/" />
-                        <IndustryCard title="Industrial Equipment" img="/media/1017650/industrial-equipment-570x308.jpg"
-                            link="/industries/industrial-equipment/" />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How Companies Use Section -->
-        <section>
-            <div class="container">
-                <hr class="section-margin l" />
-                <h2 style="text-align: center;">How Companies Use Apex Breach</h2>
-                <hr class="section-margin s" />
-                <div class="row">
-                    <div class="col-md-4 column">
-                        <FeatureCard icon="/media/3uzll1ya/medical_icon_32px.svg" title="Medical"
-                            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur." />
-                    </div>
-                    <div class="col-md-4 column">
-                        <FeatureCard icon="/media/urvdjfr1/aerospace_icon_32px.svg" title="Aerospace"
-                            text="Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." />
-                    </div>
-                    <div class="col-md-4 column">
-                        <FeatureCard icon="/media/0bgfd4dj/automotive_icon_32px.svg" title="Automotive"
-                            text="Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 column">
-                        <FeatureCard icon="/media/czlbhi3f/robotics_icon_32px.svg" title="Robotics"
-                            text="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." />
-                    </div>
-                    <div class="col-md-4 column">
-                        <FeatureCard icon="/media/2cfjtjg3/electronics_icon_32px.svg" title="Consumer Electronics"
-                            text="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
-                    </div>
-                    <div class="col-md-4 column">
-                        <FeatureCard icon="/media/zsfhh3wy/industrial_equipment_icon_32px.svg"
-                            title="Industrial Equipment"
-                            text="Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla porttitor accumsan tincidunt." />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="hero-content center">
-                    <p style="font-size: 32px;">Start Your Next Project Today</p>
-                    <a class="btn btn-default center" href="#" title="Get A Quote">Get Instant Quote</a>
-                </div>
-            </div>
-        </section>
-    </main>
-</template>
-
-<script setup>
-import { defineComponent } from 'vue'
-
-// Simple card components for brevity
-const IndustryCard = defineComponent({
-    props: ['title', 'img', 'link'],
-    template: `
-    <div class="quick-links">
-      <a class="one-item image-only" :href="link" target="_self">
-        <div class="quick-link">
-          <div class="link-image-wrapper">
-            <div class="link-image">
-              <div class="bg-cover">
-                <img :src="img" :alt="title" />
-              </div>
-            </div>
+  <main class="main-content">
+    <!-- Banner Carousel (with solid color placeholders) -->
+    <section class="banner-carousel">
+      <div class="carousel-wrapper">
+        <div
+          class="carousel-image"
+          :style="{ background: carouselImages[currentImage].color }"
+        >
+          <div class="carousel-caption">
+            <h2>{{ carouselImages[currentImage].title }}</h2>
+            <p>{{ carouselImages[currentImage].desc }}</p>
           </div>
-          <div class="content">
-            <div class="title">{{ title }}</div>
-            <div class="link">
-              <i class="material-symbols-outlined">arrow_right_alt</i>
+        </div>
+        <button class="carousel-btn left" @click="prevImage">&#8592;</button>
+        <button class="carousel-btn right" @click="nextImage">&#8594;</button>
+        <div class="carousel-indicators">
+          <span
+            v-for="(img, idx) in carouselImages"
+            :key="idx"
+            :class="{ active: idx === currentImage }"
+            @click="goToImage(idx)"
+          ></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services List -->
+    <section class="services-section">
+      <div class="container">
+        <h2 class="services-title">Our Services</h2>
+        <div class="services-list">
+          <div v-for="service in services" :key="service.title" class="service-card">
+            <div class="service-icon">
+              <i :class="service.icon"></i>
+            </div>
+            <div class="service-content">
+              <h3>{{ service.title }}</h3>
+              <p>{{ service.desc }}</p>
             </div>
           </div>
         </div>
-      </a>
-    </div>
-  `
+      </div>
+    </section>
+  </main>
+</template>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+// Carousel with solid color placeholders
+const carouselImages = [
+  {
+    color: '#1976d2',
+    title: 'Welcome to Apex Breach',
+    desc: 'Your trusted partner in cybersecurity and digital defense.'
+  },
+  {
+    color: '#388e3c',
+    title: 'Expert Penetration Testing',
+    desc: 'Identify and fix vulnerabilities before attackers do.'
+  },
+  {
+    color: '#fbc02d',
+    title: 'Rapid Incident Response',
+    desc: 'We help you recover quickly and securely from breaches.'
+  }
+]
+
+const currentImage = ref(0)
+let intervalId = null
+
+function nextImage() {
+  currentImage.value = (currentImage.value + 1) % carouselImages.length
+}
+function prevImage() {
+  currentImage.value = (currentImage.value - 1 + carouselImages.length) % carouselImages.length
+}
+function goToImage(idx) {
+  currentImage.value = idx
+}
+
+onMounted(() => {
+  intervalId = setInterval(nextImage, 5000)
+})
+onUnmounted(() => {
+  clearInterval(intervalId)
 })
 
-const FeatureCard = defineComponent({
-    props: ['icon', 'title', 'text'],
-    template: `
-    <table border="0" style="border-collapse: collapse; width: 90%;">
-      <tr>
-        <td style="width: 99%; padding: 0px;">
-          <img :src="icon" :alt="title" style="height:32px; margin-bottom:8px;" />
-          <h3>{{ title }}</h3>
-          <p>{{ text }}</p>
-        </td>
-      </tr>
-    </table>
-  `
-})
+// Example services
+const services = [
+  {
+    title: 'Penetration Testing',
+    icon: 'pi pi-shield',
+    desc: 'Comprehensive security assessments to identify and mitigate vulnerabilities in your systems.'
+  },
+  {
+    title: 'Incident Response',
+    icon: 'pi pi-bolt',
+    desc: 'Rapid response and expert guidance to contain and remediate security incidents.'
+  },
+  {
+    title: 'Security Consulting',
+    icon: 'pi pi-users',
+    desc: 'Tailored security strategies and compliance solutions for your business needs.'
+  },
+  {
+    title: 'Vulnerability Management',
+    icon: 'pi pi-exclamation-triangle',
+    desc: 'Continuous monitoring and management of vulnerabilities to keep your assets secure.'
+  }
+]
 </script>
 
 <style scoped>
 .main-content {
-    background: var(--surface-0, #fff);
+  background: var(--surface-0, #fff);
+  min-height: 100vh;
 }
 
-.hero2 {
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 3rem 0 2rem 0;
+/* Carousel Styles */
+.banner-carousel {
+  width: 100%;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 350px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-image {
+  width: 100%;
+  height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.5s;
+}
+.carousel-caption {
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+.carousel-caption h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.carousel-caption p {
+  font-size: 1.2rem;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.carousel-btn.left { left: 16px; }
+.carousel-btn.right { right: 16px; }
+.carousel-btn:hover { background: rgba(0,0,0,0.7); }
+.carousel-indicators {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.carousel-indicators span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  opacity: 0.5;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.carousel-indicators span.active {
+  opacity: 1;
+  background: var(--primary-color, #2196f3);
 }
 
-.hero2-title {
-    font-size: 3rem;
-    font-weight: bold;
+/* Services Styles */
+.services-section {
+  padding: 3rem 0 4rem 0;
+  background: var(--surface-1, #f4f4f5);
 }
-
-.hero2-buttons .btn {
-    margin-top: 1.5rem;
+.services-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
 }
-
-.section-margin.s {
-    margin: 2rem 0;
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
-
-.section-margin.l {
-    margin: 3rem 0;
+.service-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 2rem 1.5rem;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
 }
-
-.quick-links {
-    margin-bottom: 2rem;
+.service-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
-
-.quick-link {
-    background: var(--surface-1, #f4f4f5);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    transition: box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color, #2196f3);
+  margin-bottom: 1rem;
 }
-
-.quick-link:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+.service-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
-
-.link-image img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-}
-
-.content {
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.content .title {
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.cta-section {
-    background: var(--surface-1, #f4f4f5);
-    padding: 3rem 0;
-    text-align: center;
-}
-
-.hero-content.center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.btn {
-    background: var(--primary-color, #2196f3);
-    color: #fff;
-    border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 4px;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 1rem;
-    display: inline-block;
-    transition: background 0.2s;
-}
-
-.btn:hover {
-    background: var(--primary-color-hover, #1769aa);
+.service-content p {
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
 }
 </style>
