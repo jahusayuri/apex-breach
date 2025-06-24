@@ -31,10 +31,11 @@ import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
 const route = useRoute()
+const baseUrl = process.env.BASE_URL || '/'
 
 const tabs = ref([
-    { label: 'Home', icon: 'pi pi-fw pi-home', to: '/' },
-    { label: 'Contact', icon: 'pi pi-fw pi-envelope', to: '/contact' }
+    { label: 'Home', icon: 'pi pi-fw pi-home', to: `${baseUrl}` },
+    { label: 'Contact', icon: 'pi pi-fw pi-envelope', to: `${baseUrl}contact` }
 ])
 
 function navigate(path) {
