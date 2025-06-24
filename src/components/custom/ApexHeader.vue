@@ -17,9 +17,9 @@
             </nav>
             <!-- Right: Login -->
             <div class="header-actions">
-                <button class="login-btn" @click="navigate('/login')">
+                <!-- <button class="login-btn" @click="navigate('/login')">
                     <i class="pi pi-user"></i> Login
-                </button>
+                </button> -->
             </div>
         </div>
     </header>
@@ -34,7 +34,6 @@ const route = useRoute()
 
 const tabs = ref([
     { label: 'Home', icon: 'pi pi-fw pi-home', to: '/' },
-    { label: 'About', icon: 'pi pi-fw pi-info', to: '/about' },
     { label: 'Contact', icon: 'pi pi-fw pi-envelope', to: '/contact' }
 ])
 
